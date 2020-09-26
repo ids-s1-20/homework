@@ -1,5 +1,6 @@
 ---
 title: "HW 00 - Pet names"
+subtitle: "Due: 1 October, 16:00 UK time"
 output: 
   tufte::tufte_html:
     css: ../hw.css
@@ -9,7 +10,8 @@ link-citations: yes
 ---
 
 ```{r setup, include=FALSE}
-library(here)
+library(tidyverse)
+library(openintro)
 knitr::opts_chunk$set(
   eval = FALSE,
   out.width = "100%"
@@ -114,29 +116,21 @@ It's very important that you do this for two reasons:
 -   It's only when you're in the course workspace that you'll be able to benefit from R packages I've pre-installed for you so that your project can be configured correctly.
 -   It's only when you're in the course workspace that your usage of RStudio Cloud won't count towards their free usage limits. RStudio offers free usage of their Cloud service, but they cap it at 15 hours. The university has already paid for an RStudio Cloud account for you, and you want to make sure you're taking advantage of that, and not using up your personal free hours.
 
-Before you proceed, confirm that you are in the course workspace by checking out what's on your top bar in RStudio Cloud.
-
-```{r course-workspace, fig.fullwidth=TRUE, echo = FALSE, eval = TRUE}
+```{r course-workspace, fig.margin = TRUE, echo = FALSE, eval = TRUE}
 knitr::include_graphics("img/course-workspace.png")
 ```
 
-### Step 3. Clone the repo
+Before you proceed, confirm that you are in the course workspace by checking out what's on your top bar in RStudio Cloud.
 
-```{r new-project-from-git-1, fig.margin = TRUE, echo = FALSE, eval = TRUE}
-knitr::include_graphics("img/new-project-from-git-1.png")
-```
+### Step 3. Clone the repo
 
 In RStudio, click on the **down arrow** next to New Project and then choose **New Project from Git Repository**.
 
-```{r new-project-from-git-2, fig.margin = TRUE, echo = FALSE, eval = TRUE}
-knitr::include_graphics("img/new-project-from-git-2.png")
-```
-
 In the pop-up window, **paste the URL** you copied from GitHub, make sure the box for **Add packages from the base project** is checked (it should be, by default) and then click **OK**.
 
-### Step 4. Get working!
-
-Open the R Markdown (Rmd) file called `hw-00-pet-names.Rmd`.
+```{r new-project-from-git, echo = FALSE, eval = TRUE, fig.align = "left"}
+knitr::include_graphics("img/new-project-from-git.png")
+```
 
 ## Hello RStudio!
 
@@ -149,7 +143,7 @@ knitr::include_graphics("img/rstudio-anatomy.png")
 -   On the bottom left is the Console, this is where you can write code that will be evaluated. Try typing `2 + 2` here and hit enter, what do you get?
 -   On the bottom right is the Files pane, as well as other panes that will come handy as we start our analysis.
 -   If you click on a file, it will open in the editor, on the top left pane.
--   Finally, the top right pane shows your Environment. If you define a variable it would show up there. Try typing `x <- 2` in the Console and hit enter, what do you get in the Environment pane? Importantly, this pane is also where the Git interface lives. We will be using that regularly throughout this assignment.
+-   Finally, the top right pane shows your Environment. If you define a variable it would show up there. Try typing `x <- 2` in the Console and hit enter, what do you get in the **Environment** pane? Importantly, this pane is also where the **Git** interface lives. We will be using that regularly throughout this assignment.
 
 ## Warm up
 
@@ -163,7 +157,7 @@ The top portion of your R Markdown file (between the three dashed lines) is call
 
 Open the R Markdown (Rmd) file in your project, change the author name to your name, and knit the document.
 
-```{r yaml-raw-to-rendered, fig.fullwidth=TRUE, echo = FALSE, eval = TRUE}
+```{r yaml-raw-to-rendered, echo = FALSE, eval = TRUE, fig.align = "center"}
 knitr::include_graphics("img/yaml-raw-to-rendered.png")
 ```
 
@@ -171,12 +165,15 @@ knitr::include_graphics("img/yaml-raw-to-rendered.png")
 
 Then Go to the **Git pane** in your RStudio.
 
-If you have made changes to your Rmd file, you should see it listed here.
-Click on it to select it in this list and then click on **Diff**.
-This shows you the **diff**erence between the last committed state of the document and its current state that includes your changes.
-If you're happy with these changes, write *"Update author name"* in the **Commit message** box and hit **Commit**.
+You should see that your Rmd (R Markdown) file and its output, your md file (Markdown), file are listed there as recently changed filed.
+You should also see a file with the \`.Rproj\` extension, which is the RStudio project configuration file that got created with you cloned your repo into an RStudio project.
+You don't need to worry so much about the contents of this file for now.
 
-```{r update-author-name-commit, fig.fullwidth = TRUE, echo = FALSE, eval = TRUE}
+Next, click on **Diff**.
+This will pop open a new window that shows you the **diff**erence between the last committed state of the document and its current state that includes your changes.
+If you're happy with these changes, click on the checkboxes of all files in the list, and type *"Update author name"* in the **Commit message** box and hit **Commit**.
+
+```{r update-author-name-commit, echo = FALSE, eval = TRUE, fig.align = "left"}
 knitr::include_graphics("img/update-author-name-commit.png")
 ```
 
@@ -192,11 +189,15 @@ Or more specifically, to your repo on GitHub.
 Why?
 So that others can see your changes.
 And by others, we mean the course teaching team (your repos in this course are private to you and us, only).
-
 In order to push your changes to GitHub, click on **Push**.
+
+```{r ready-to-push, fig.margin = TRUE, echo = FALSE, eval = TRUE}
+knitr::include_graphics("img/ready-to-push.png")
+```
+
 This will prompt a dialogue box where you first need to enter your user name, and then your password.
 This might feel cumbersome.
-Bear with me... We *will* teach you how to save your password so you don't have to enter it every time.
+Bear with me... I *will* teach you how to save your password so you don't have to enter it every time.
 But for this one assignment you'll have to manually enter each time you push in order to gain some experience with it.
 
 ### Thought exercise
@@ -217,9 +218,8 @@ We use the `library()` function to load packages.
 In your R Markdown document you should see an R chunk labelled `load-packages` which has the necessary code for loading both packages.
 You should also load these packages in your Console, which you can do by sending the code to your Console by clicking on the **Run Current Chunk** icon (green arrow pointing right icon).
 
-```{r}
-library(tidyverse)
-library(openintro)
+```{r load-packages-chunk, echo = FALSE, eval = TRUE, fig.align = "left"}
+knitr::include_graphics("img/load-packages-chunk.png")
 ```
 
 Note that these packages are also get loaded in your R Markdown environment when you **Knit** your R Markdown document.
@@ -229,123 +229,146 @@ Note that these packages are also get loaded in your R Markdown environment when
 The city of [Seattle, WA](https://en.wikipedia.org/wiki/Seattle) has an open data portal that includes pets registered in the city.
 For each registered pet, we have information on the pet's name and species.
 The data used in this exercise can be found in the **openintro** package, and it's called `seattlepets`.
+Since the dataset is distributed with the package, we don't need to load it separately; it becomes available to us when we load the package.
+
+You can view the dataset as a spreadsheet using the `View()` function.
+Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn't really make sense...).
+When you run this in the console, you'll see the following **data viewer** window pop up.
+
+```{r view-data}
+View(seattlepets)
+```
+
+```{r data.viewer, echo = FALSE, eval = TRUE, fig.align = "left"}
+knitr::include_graphics("img/view-data.png")
+```
+
 You can find out more about the dataset by inspecting its documentation (which contains a **data dictionary**, name of each variable and its description), which you can access by running `?seattlepets` in the Console or using the Help menu in RStudio to search for `seattlepets`.
+
+## Exercises
 
 1.  According to the data dictionary, how many pets are included in this dataset?
 
-2.  Again, according to the data dictionary, how many variables do we have for each pet?
+✏️ *Write your answer in your R Markdown document under Exercise 1, knit the document, commit your changes with a commit message that says "Completed Exercise 1", and push.*
 
-3.  
+1.  Again, according to the data dictionary, how many variables do we have for each pet?
+
+✏️ *Write your answer in your R Markdown document under Exercise 2, knit the document, commit your changes with a commit message that says "Completed Exercise 2", and push.*
+
+1.  What are the three most common pet names in Seattle? To do this you will need to count the frequencies of each pet name and display the results in descending order of frequency so that you can easily see the top three most popular names. The following code does exactly that.
+
+```{marginfigure}
+The two lines of code can be read as "Start with the seattlepets data frame, and then count the animal_names, and display the results sorted in descending order. The "and then" in the previous sentence maps to %>%, the pipe operator, which takes what comes before it and plugs it in as the first argument of the function that comes after it.
+```
+
+```{r}
+seattlepets %>%
+  count(animal_name, sort = TRUE)
+```
+
+✏️ *Write your answer in your R Markdown document under Exercise 3. In this exercise you will not only provide a written answer but also include some code and output. You should insert the code in the code chunk provided for you, knit the document to see the output, and then write your narrative for the answer based on the output of this function, and knit again to see your narrative, code, and output in the resulting document. Then, commit your changes with a commit message that says "Completed Exercise 3", and push.*
+
+Let's also look to see what the most common pet names are for various species.
+For this we need to first `group_by()` the `species`, and then do the same counting we did before.
+
+```{marginfigure}
+Looks like many of those NAs were cats. Poor unnamed kitties…
+```
+
+```{r species-names, eval=TRUE}
+seattlepets %>% 
+  group_by(species) %>%
+  count(animal_name, sort = TRUE)
+```
+
+But this output isn't exactly what we wanted.
+We wanted to know the most common cat and dog names, but there are barely any cats present in this output!
+This is because there are more dogs than cats in the dataset overall.
+We can confirm this by counting the various species in the data.
+
+```{marginfigure}
+6 pigs in the city? Ok… But we'll continue with cats and dogs.
+```
+
+```{r species, eval=TRUE}
+seattlepets %>%
+  count(species, sort = TRUE)
+```
+
+Let's search for the top 5 cat and dog names.
+To do this, we can use the `top_n()` function.
+
+```{r species-names-top5, eval=TRUE}
+seattlepets %>% 
+  group_by(species) %>%
+  count(animal_name, sort = TRUE) %>% 
+  top_n(5)
+```
+
+1.  Based on the previous output we can easily identify the most common cat and dog names in Seattle, but the output is sorted by `n` (the frequencies) as opposed to being organized by the `species`. Build on the pipeline to arrange the results so that they're arranged by `species` first, and then `n`. This means you will need to add one more step to the pipeline, and you have two options: `arrange(species, n)` or `arrange(n, species)`. You should try both and decide which one organizes the output by species and then ranks the names in order of frequency for each species.
+
+✏️ *Write your answer in your R Markdown document under Exercise 4. In this exercise you're asked to complete the code provided for you. You should insert the code in the code chunk provided for you, knit the document to see the output, and then write your narrative for the answer based on the output of this function, and knit again to see your narrative, code, and output in the resulting document. Then, commit your changes with a commit message that says "Completed Exercise 4", and push.*
 
 The following visualization plots the proportion of dogs with a given name versus the proportion of cats with the same name.
 The 20 most common cat and dog names are displayed.
-The diagonal line on the plot is the x=yx=y line; if a name appeared on this line, the name's popularity would be exactly the same for dogs and cats.
+The diagonal line on the plot is the $x = y$ line; if a name appeared on this line, the name's popularity would be exactly the same for dogs and cats.
 
-The data for this assignment come from [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-09-22/readme.md) -- this is the same dataset we used in the code along session for the week.
-TidyTuesday is a weekly social data project for the R community.
-Read more about TidyTuesday [here](https://github.com/rfordatascience/tidytuesday) and see people's contributions on Twitter under the [\#tidytuesday hashtag](https://twitter.com/search?q=tidytuesday&src=typed_query).
+```{r eval = TRUE, echo = FALSE}
+library(ggimage)
+library(ggrepel)
+    
+# data prep
+name_props <- seattlepets %>% 
+  filter(
+    !is.na(animal_name),
+    species %in% c("Dog", "Cat")
+    ) %>%
+  group_by(species) %>% 
+  count(animal_name, sort = TRUE) %>%
+  mutate(prop = n / sum(n))
+    
+cat_name_props <- name_props %>%
+  filter(species == "Cat") %>%
+  rename(cat_prop = prop) %>%
+  slice(1:30)
 
-Recent development in Edinburgh regarding the growth of Airbnb and its impact on the housing market means a better understanding of the Airbnb listings is needed.
-Using data provided by Airbnb, we can explore how Airbnb availability and prices vary by neighborhood.
+dog_name_props <- name_props %>%
+  filter(species == "Dog") %>%
+  rename(dog_prop = prop) %>%
+  slice(1:30)
+    
+comb_name_props <- inner_join(cat_name_props, dog_name_props, 
+                              by = "animal_name") %>%
+  ungroup() %>%
+  select(animal_name, cat_prop, dog_prop)
+    
+# create viz
+ggplot(comb_name_props, aes(x = cat_prop, y = dog_prop)) +
+  geom_abline(intercept = 0, 
+              color = COL["lgray","full"], 
+              alpha = 0.8, 
+              size = 1.5) +
+  geom_text_repel(aes(label = animal_name), 
+                  segment.color = COL["gray","full"], 
+                  seed = 291252, max.iter = 10000) +
+  geom_point(color = COL["blue","full"], alpha = 0.8) +
+  theme_minimal() +
+  labs(x = "Proportion of cats", y = "Proportion of dogs") +
+  xlim(0.002, 0.01) +
+  ylim(0.002, 0.01) +
+  ggimage::geom_emoji(
+      image = "1f436", aes(x = 0.003, y = 0.009), size = 0.1
+      ) +
+  ggimage::geom_emoji(
+      image = "1f431", aes(x = 0.009, y = 0.003), size = 0.1
+      )
+```
 
-The data come from the [Kaggle database](https://www.kaggle.com/thoroc/edinburgh-inside-airbnb/version/2).
-It's been modified to better serve the goals of this exploration.
+1.  What names are more common for cats than dogs? The ones above the line or the ones below the line?
+2.  Is the relationship between the two variables (proportion of cats with a given name and proportion of dogs with a given name) positive or negative? What does this mean in context of the data?
 
-## Learning goals
-
-The goal of this assignment is not to conduct a thorough analysis of Airbnb listings in Edinburgh, but instead to give you another chance to practice your workflow, data visualization, and interpretation skills.
+✏️ *Now is a good time to commit and push your changes to GitHub with an appropriate commit message. Commit and push all changed files so that your Git pane is cleared up afterwards. Make sure that your last push to the repo comes before the deadline, 1 October, 16:00 UK time.*
 
 ## Getting help
 
 If you have any questions about the assignment, please post them on Piazza!
-
-## Getting started
-
-```{marginfigure}
-**IMPORTANT:** If there is no GitHub repo created for you for this assignment, it means I didn't have your GitHub username as of when I assigned the homework. Please let me know your GitHub username asap, and I can create your repo.
-```
-
-Go to the course [GitHub organization](https://github.com/ids-s1-19) and locate your HW 1 repo, which should be named `hw-01-airbnb-edi-YOUR_GITHUB_USERNAME`.
-Grab the URL of the repo, and clone it in RStudio.
-Refer to [Lab 01](/labs/lab-01/lab-01-hello-r) if you would like to see step-by-step instructions for cloning a repo into an RStudio project.
-
-First, open the R Markdown document `hw-01-airbnb-edi.Rmd` and Knit it.
-Make sure it compiles without errors.
-The output will be in the file markdown `.md` file with the same name.
-
-## Packages
-
-We'll use the **tidyverse** package for this analysis.
-Run the following code in the Console to load this package.
-
-```{r load-packages, message=FALSE}
-library(tidyverse)
-```
-
-## Data
-
-The data is in a CSV (comma separated values) file called `listings.csv` in the `data/` folder in your repository.
-You can load this file into R using the `read_csv()` function.
-
-```{r include=FALSE}
-listings <- read_csv(here::here("csv/listings.csv"))
-```
-
-```{r eval=FALSE}
-listings <- read_csv("data/listings.csv")
-```
-
-1.  Load the data in the Console with the code above, and observe that an object called `listings` has been added to your environment (in the Environment tab) in the top right. Click on this object to view the data in the data viewer. What does each row in the dataset represent?
-
-```{marginfigure}
-**Hint:** The Markdown Quick Reference sheet has an example of inline R code that might be helpful. You can access it from the Help menu in RStudio.
-```
-
-2.  How many observations (rows) does the dataset have? Instead of hard coding the number in your answer, use inline code.
-
-`r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Now is a good time to commit and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
-
-Each column represents a variable.
-We can get a list of the variables in the data frame using the `names()` function.
-
-```{r}
-names(listings)
-```
-
-The variables and their descriptions are given below:
-
--   `id`: ID number of the listing
--   `price`: Price, in GBP, for one night stay
--   `neighbourhood`: Neighbourhood listing is located in
--   `accommodates`: Number of people listing accomodates
--   `bathrooms`: Number of bathrooms
--   `bedrooms`: Number of bedrooms
--   `beds`: Number of beds (which can be different than the number of bedrooms)
--   `review_scores_rating`: Average rating of property
--   `number_of_reviews`: Number of reviews
--   `listing_url`: Listing URL
-
-```{marginfigure}
-**Note:** The plot will give a warning about some observations with non-finite values for price being removed. Don't worry about the warning, it simply means that 199 listings in the data didn't have prices available, so they can't be plotted.
-```
-
-3.  Create a faceted histogram where each facet represents a neighborhood and displays the distribution of Airbnb prices in that neighborhood. Sample code is provided below, but you will need to fill in the blanks.
-
-```{r eval=FALSE}
-ggplot(data = ___, mapping = aes(x = ___)) +
-  geom_histogram(binwidth = ___) +
-  facet_wrap(~___)
-```
-
-Let's desconstruct this code:
-
--   `ggplot()` is the function we are using to build our plot, in layers.
--   In the first layer we always define the data frame as the first argument. Then, we define the mappings between the variables in the dataset and the **aes**thetics of the plot (e.g. x and y coordinates, colors, etc.).
--   In the next layer we represent the data with **geom**etric shapes, in this case with a histogram. You should decide what makes a reasonable bin width for the histogram by trying out a few options.
--   In the final layer we facet the data by neighbourhood.
-
-`r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes again.*
-
-4.  Create a similar visualization, this time showing the distribution of review scores (`review_scores_rating`) across neighborhoods. In your answer, include a brief interpretation of how Airbnb guests rate properties in general and how the neighborhoods compare to each other in terms of their ratings.
-
-`r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes again.*
