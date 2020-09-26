@@ -12,6 +12,9 @@ link-citations: yes
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(openintro)
+library(ggimage)
+library(ggrepel)
+    
 knitr::opts_chunk$set(
   eval = FALSE,
   out.width = "100%"
@@ -296,13 +299,16 @@ seattlepets %>%
 ```
 
 Let's search for the top 5 cat and dog names.
-To do this, we can use the `top_n()` function.
+To do this, we can use the `slice_max()` function. 
+The first argument in the function is the variable we want to select the highest values of, which is `n`. 
+The second argument is the number of rows to select, which is `n = 5` for the top 5. 
+It may be a bit confusing that both of these are `n`, but this is because we already have a variable called `n` in the data frame.
 
 ```{r species-names-top5, eval=TRUE}
 seattlepets %>% 
   group_by(species) %>%
   count(animal_name, sort = TRUE) %>% 
-  top_n(5)
+  slice_max(n, n = 5)
 ```
 
 1.  Based on the previous output we can easily identify the most common cat and dog names in Seattle, but the output is sorted by `n` (the frequencies) as opposed to being organized by the `species`. Build on the pipeline to arrange the results so that they're arranged by `species` first, and then `n`. This means you will need to add one more step to the pipeline, and you have two options: `arrange(species, n)` or `arrange(n, species)`. You should try both and decide which one organizes the output by species and then ranks the names in order of frequency for each species.
@@ -314,9 +320,6 @@ The 20 most common cat and dog names are displayed.
 The diagonal line on the plot is the $x = y$ line; if a name appeared on this line, the name's popularity would be exactly the same for dogs and cats.
 
 ```{r eval = TRUE, echo = FALSE}
-library(ggimage)
-library(ggrepel)
-    
 # data prep
 name_props <- seattlepets %>% 
   filter(
