@@ -168,9 +168,7 @@ knitr::include_graphics("img/yaml-raw-to-rendered.png")
 
 Then Go to the **Git pane** in your RStudio.
 
-You should see that your Rmd (R Markdown) file and its output, your md file (Markdown), file are listed there as recently changed filed.
-You should also see a file with the \`.Rproj\` extension, which is the RStudio project configuration file that got created with you cloned your repo into an RStudio project.
-You don't need to worry so much about the contents of this file for now.
+You should see that your Rmd (R Markdown) file and its output, your md file (Markdown), file are listed there as recently changed files.
 
 Next, click on **Diff**.
 This will pop open a new window that shows you the **diff**erence between the last committed state of the document and its current state that includes your changes.
@@ -299,9 +297,9 @@ seattlepets %>%
 ```
 
 Let's search for the top 5 cat and dog names.
-To do this, we can use the `slice_max()` function. 
-The first argument in the function is the variable we want to select the highest values of, which is `n`. 
-The second argument is the number of rows to select, which is `n = 5` for the top 5. 
+To do this, we can use the `slice_max()` function.
+The first argument in the function is the variable we want to select the highest values of, which is `n`.
+The second argument is the number of rows to select, which is `n = 5` for the top 5.
 It may be a bit confusing that both of these are `n`, but this is because we already have a variable called `n` in the data frame.
 
 ```{r species-names-top5, eval=TRUE}
@@ -370,7 +368,7 @@ ggplot(comb_name_props, aes(x = cat_prop, y = dog_prop)) +
 1.  What names are more common for cats than dogs? The ones above the line or the ones below the line?
 2.  Is the relationship between the two variables (proportion of cats with a given name and proportion of dogs with a given name) positive or negative? What does this mean in context of the data?
 
-✏️ *Now is a good time to commit and push your changes to GitHub with an appropriate commit message. Commit and push all changed files so that your Git pane is cleared up afterwards. Make sure that your last push to the repo comes before the deadline, 1 October, 16:00 UK time.*
+✏️ *Now is a good time to commit and push your changes to GitHub with an appropriate commit message. Commit and push all changed files so that your Git pane is cleared up afterwards. Make sure that your last push to the repo comes before the deadline, 1 October, 16:00 UK time. You can confirm that what you committed and pushed are indeed in your repo that we will see by visiting your repo on GitHub.*
 
 ## Getting help
 
