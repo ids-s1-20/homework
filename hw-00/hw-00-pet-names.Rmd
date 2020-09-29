@@ -54,7 +54,7 @@ We've already thrown around a few new terms, so let's define them before we proc
 
 -   **GitHub:** A web platform for hosting version controlled files and facilitating collaboration among users.
 
--   **Repository:** A Git repository repository contains all of your project's files and stores each file's revision history.
+-   **Repository:** A Git repository contains all of your project's files and stores each file's revision history.
     It's common to refer to a repository as a repo.
 
     -   In this course, each assignment you work on will be contained in a Git repo.
@@ -87,6 +87,10 @@ Before you can get started with the analysis, you need to make sure you:
 
 If you failed to confirm any of these, it means you have not yet completed the prerequisites for this assignment.
 Please go back to [Prerequisites] and complete them before continuing the assignment.
+
+**!!!IMPORTANT!!!** Your repository is not the one called `homework`, that's where I write the homework instructions (like this document!).
+You should look for a repo with your username, and if it doesn't exist, go back and do the prerequisite steps.
+If you have done them, and it still doesn't exist, then let me know and I'll help you get unstuck.
 
 ## Workflow
 
