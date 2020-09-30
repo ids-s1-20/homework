@@ -47,15 +47,13 @@ We've already thrown around a few new terms, so let's define them before we proc
 
 -   **R:** Name of the programming language we will be using throughout the course.
 
--   **RStudio:** An integrated development environment for R.
-    In other words, a convenient interface for writing and running R code.
+-   **RStudio:** An integrated development environment for R. In other words, a convenient interface for writing and running R code.
 
 -   **Git:** A version control system.
 
 -   **GitHub:** A web platform for hosting version controlled files and facilitating collaboration among users.
 
--   **Repository:** A Git repository contains all of your project's files and stores each file's revision history.
-    It's common to refer to a repository as a repo.
+-   **Repository:** A Git repository contains all of your project's files and stores each file's revision history. It's common to refer to a repository as a repo.
 
     -   In this course, each assignment you work on will be contained in a Git repo.
     -   For individual assignments, only you will have access to the repo. For team assignments, all team members will have access to a single repo where they work collaboratively.
@@ -87,6 +85,8 @@ Before you can get started with the analysis, you need to make sure you:
 
 If you failed to confirm any of these, it means you have not yet completed the prerequisites for this assignment.
 Please go back to [Prerequisites] and complete them before continuing the assignment.
+
+If you believe you've completed all of the prerequisites and you are still having difficulty, review troubleshooting advice [here](https://www.introds.org/troubleshoot/github-org.html).
 
 **!!!IMPORTANT!!!** Your repository is not the one called `homework`, that's where I write the homework instructions (like this document!).
 You should look for a repo with your username, and if it doesn't exist, go back and do the prerequisite steps.
