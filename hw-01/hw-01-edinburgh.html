@@ -633,7 +633,7 @@ width: 100%;
 <details>
   <summary>Tired of typing your password?</summary>
 
-<p>Chances are your browser has already saved your password, but if not, you can ask Git to save (cache) your password for a period of time, where you indicate the period of time in seconds. For example, if you want it to cache your password for 1 hour, that would be 3,600 seconds. To do so, run the following <b>in the console</b>, <code>use_git_config(credential.helper = &quot;cache --timeout=3600&quot;)</code>. If you want to cache it for a longer amount of time, you can adjust the number in the code.</p>
+<p>Chances are your browser has already saved your password, but if not, you can ask Git to save (cache) your password for a period of time, where you indicate the period of time in seconds. For example, if you want it to cache your password for 1 hour, that would be 3,600 seconds. To do so, run the following <b>in the console</b>, <code>usethis::use_git_config(credential.helper = &quot;cache --timeout=3600&quot;)</code>. If you want to cache it for a longer amount of time, you can adjust the number in the code.</p>
   
 </details>
 </div>
@@ -653,7 +653,7 @@ width: 100%;
 <p>Once upon a time, people travelled all over the world, and some stayed in hotels and others chose to stay in other people’s houses that they booked through Airbnb. Recent developments in Edinburgh regarding the growth of Airbnb and its impact on the housing market means a better understanding of the Airbnb listings is needed. Using data provided by Airbnb, we can explore how Airbnb availability and prices vary by neighbourhood.</p>
 <p>The data can be found in the <strong>dsbox</strong> package, and it’s called <code>edibnb</code>. Since the dataset is distributed with the package, we don’t need to load it separately; it becomes available to us when we load the package.</p>
 <p>You can view the dataset as a spreadsheet using the <code>View()</code> function. Note that you should not put this function in your R Markdown document, but instead type it directly in the Console, as it pops open a new window (and the concept of popping open a window in a static document doesn’t really make sense…). When you run this in the console, you’ll see the following <strong>data viewer</strong> window pop up.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">View</span>(edibnb)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(edibnb)</span></code></pre></div>
 <p>You can find out more about the dataset by inspecting its documentation, which you can access by running <code>?edibnb</code> in the Console or using the Help menu in RStudio to search for <code>edibnb</code>. You can also find this information <a href="https://rstudio-education.github.io/dsbox/reference/edibnb.html">here</a>.</p>
 <ol style="list-style-type: decimal">
 <li>How many observations (rows) does the dataset have? Instead of hard coding the number in your answer, use inline code.</li>

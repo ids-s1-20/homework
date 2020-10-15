@@ -93,7 +93,7 @@ This will prompt a dialogue box where you first need to enter your user name, an
 <details>
   <summary>Tired of typing your password?</summary>
 
-<p>Chances are your browser has already saved your password, but if not, you can ask Git to save (cache) your password for a period of time, where you indicate the period of time in seconds. For example, if you want it to cache your password for 1 hour, that would be 3,600 seconds. To do so, run the following <b>in the console</b>, <code>use_git_config(credential.helper = "cache --timeout=3600")</code>. If you want to cache it for a longer amount of time, you can adjust the number in the code.</p>
+<p>Chances are your browser has already saved your password, but if not, you can ask Git to save (cache) your password for a period of time, where you indicate the period of time in seconds. For example, if you want it to cache your password for 1 hour, that would be 3,600 seconds. To do so, run the following <b>in the console</b>, <code>usethis::use_git_config(credential.helper = "cache --timeout=3600")</code>. If you want to cache it for a longer amount of time, you can adjust the number in the code.</p>
   
 </details>
 ```
