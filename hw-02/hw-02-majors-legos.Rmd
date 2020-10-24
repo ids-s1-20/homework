@@ -1,0 +1,160 @@
+---
+title: "HW 02 - Majors + legos"
+subtitle: "Due: 29 October, 16:00 UK time"
+output: 
+  tufte::tufte_html:
+    css: ../hw.css
+    tufte_variant: "envisioned"
+    highlight: pygments
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(dsbox)
+library(fivethirtyeight)
+library(scales)
+
+knitr::opts_chunk$set(out.width = "100%", eval = TRUE)
+```
+
+```{r unsplash, fig.margin = TRUE, echo = FALSE}
+knitr::include_graphics("img/lego-grad-cap.jpg")
+```
+
+In this assignment we'll work with two datasets, one on earnings of different college majors and the other on lego sales.
+The assignment assumes that you've worked through materials up to week 5.
+
+**IMPORTANT:** If there is no `hw-02` GitHub repo created for you for this assignment, it means I didn't have your GitHub username as of when I assigned the homework. Please let me know your GitHub username asap and I can create your repo.
+
+```{=html}
+<details>
+  <summary>Haven't done the previous homework assignment? Click here for workflow overview.</summary>
+  
+<p>For each assignment in this course you will start with a GitHub repo that I created for you and that contains the starter documents you will build upon when working on your assignment. The first step is always to bring these files into RStudio so that you can edit them, run them, view your results, and interpret them. This action is called cloning.</p>
+
+<p>Then you will work in RStudio on the data analysis, making commits along the way (snapshots of your changes) and finally push all your work back to GitHub.</p>
+
+<p>Next, get the URL of the repo to be cloned, go to RStudio Cloud and navigate to the course workspace via the left sidebar, and clone the repo. If you would like to step-by-step instructions with screenshots, please review <a href="https://ids-s1-20.github.io/homework/hw-00/hw-00-pet-names.html">HW 00</a>.</p>
+  
+</details>
+```
+
+## Warm up
+
+Before we introduce the data, let's warm up with some simple exercises.
+
+- Step 1. Update the YAML, changing the author name to your name, and **knit** the document.
+- Step 2. Commit and push your changes to GitHub with a meaningful commit message.
+- Step 3. Push your changes to GitHub.
+- Step 4. Go to your repo on GitHub and confirm that your changes are visible in your Rmd **and** md files.
+If anything is missing, commit and push again.
+
+```{=html}
+<details>
+  <summary>Tired of typing your password?</summary>
+
+<p>Chances are your browser has already saved your password, but if not, you can ask Git to save (cache) your password for a period of time, where you indicate the period of time in seconds. For example, if you want it to cache your password for 1 hour, that would be 3,600 seconds. To do so, run the following <b>in the console</b>, <code>usethis::use_git_config(credential.helper = "cache --timeout=3600")</code>. If you want to cache it for a longer amount of time, you can adjust the number in the code.</p>
+  
+</details>
+```
+## Packages
+
+R is an open-source language, and developers contribute functionality to R via packages.
+In this assignment we will use the following packages:
+
+-   **tidyverse**: a collection of packages for doing data analysis in a "tidy" way
+-   **dsbox**: contains the datasets that we will use in this course
+-   **scales**: provides the internal scaling infrastructure used by ggplot2 and gives you tools to override the default breaks, labels, transformations and palettes
+-   **fivethirtyeight**: contains the datasets in [FiveThirtyEight](https://fivethirtyeight.com/) articles
+
+We use the `library()` function to load packages.
+In your R Markdown document you should see an R chunk labelled `load-packages` which has the necessary code for loading both packages.
+You should also load these packages in your Console, which you can do by sending the code to your Console by clicking on the **Run Current Chunk** icon (green arrow pointing right icon).
+
+Note that these packages are also get loaded in your R Markdown environment when you **Knit** your R Markdown document.
+
+## College majors
+
+In this assignment we explore data on college majors and earnings, specifically the data in the FiveThirtyEight story [*The Economic Guide To Picking A College Major*](https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/).).
+These data originally come from the American Community Survey (ACS) 2010-2012 Public Use Microdata Series.
+While this is outside the scope of this assignment, if you are curious about how raw data from the ACS were cleaned and prepared, see [the code](https://github.com/fivethirtyeight/data/blob/master/college-majors/college-majors-rscript.R) "the code") FiveThirtyEight authors used.
+
+We should also note that there are many considerations that go into picking a major.
+Earnings potential and employment prospects are two of them, and they are important, but they don't tell the whole story.
+Keep this in mind as you analyze the data.
+
+Before working on this part of the homework we recommend that you work through the interactive tutorial titled [What should I major in?](https://minecr.shinyapps.io/dsbox-03-collegemajors). 
+This tutorial will introduce you to the dataset and walk you through simple exercises with instant, automated feedback. 
+Think of it as warming up!
+
+If you've worked through the tutorial, you already know that the data frame we are working with is called `college_recent_grads` and it's in the fivethirtyeight package.
+
+To find out more about the dataset, type the following in your Console: `?college_recent_grads`. A question mark before the name of an object will 
+always bring up its help file. This command must be ran in the Console. 
+
+You can take a quick peek at your data frame and view its dimensions with the `glimpse()` function.
+You can find out more about the dataset by inspecting its documentation, which you can access by running `?college_recent_grads` in the Console or using the 
+Help menu in RStudio to search for `college_recent_grads`.
+You can also find this information [here](https://fivethirtyeight-r.netlify.app/reference/college_recent_grads.html).
+
+The `college_recent_grads` data frame is a trove of information. Let's think about some questions we might want to answer with these data:
+
+- Which major has the lowest unemployment rate?
+- Which major has the highest percentage of women?
+- How do the distributions of median income compare across major categories?
+
+1. There are three types of incomes reported in this data frame: `p25th`, `median`, and `p75th`. These correspond to the 25th, 50th, and 75th percentiles of the income distribution of sampled individuals for a given major. Why do we often choose the median, rather than the mean, to 
+describe the typical income of a group of people?
+
+✏️ *Write your answer in your R Markdown document under the appropriate exercise, knit the document, commit your changes with a meaningful commit message and push. Make sure you commit and push all files so your Git pane is clear after the push.*
+
+```{marginfigure}
+**Hint:** The [`label_dollar()`](https://scales.r-lib.org/reference/label_dollar.html) function can be helpful for the x-axis.
+```
+
+2. Recreate the following visualisation. Note: The binwidth used is \$5,000. Pay special attention to axis text and labels.
+
+```{r echo=FALSE}
+knitr::include_graphics("plot-to-recreate/plot-to-recreate.png")
+```
+
+✏️ *Write your answer in your R Markdown document under the appropriate exercise, knit the document, commit your changes with a meaningful commit message and push. Make sure you commit and push all files so your Git pane is clear after the push.*
+
+3. Recreate the visualisation from the previous exercise, this time using a binwidth of \$1,000.  Which of these (\$1,000 or \$5,000) is a better choice of binwidth? Explain your reasoning in one sentence.
+
+4. Which **non-STEM majors** have median salaries equal to or less than the median for all majors' median earnings? Your output should only show the major name and median, 25th percentile, and 75th percentile earning for that major as and should be sorted such that the major with the highest median earning is on top. Note: STEM majors are `"Biology & Life Science"`, `"Computers & Mathematics"`, `"Engineering"`, and `"Physical Sciences"`. In this question we're inquiring about non-STEM majors.
+
+✏️ *Write your answer in your R Markdown document under the appropriate exercise, knit the document, commit your changes with a meaningful commit message and push. Make sure you commit and push all files so your Git pane is clear after the push.*
+
+4. Ask a question of interest to you that can be answered using at least three variables from the dataset and answer it using summary statistic(s) and/or visualization(s).
+
+✏️ *Write your answer in your R Markdown document under the appropriate exercise, knit the document, commit your changes with a meaningful commit message and push. Make sure you commit and push all files so your Git pane is clear after the push.*
+
+## Lego sales
+
+Before working on this part of the homework we recommend that you work through the interactive tutorial titled [Lego sales](https://minecr.shinyapps.io/dsbox-04-legosales/). 
+Just like the previous one, this tutorial will introduce you to the dataset and walk you through simple exercises with instant, automated feedback. 
+The exercises in this homework are slightly more advanced than the ones in the tutorial, so it's useful to get acquainted with the data there first.
+
+If you've already worked through this tutorial, you already know that we're working with Lego sales data from 2018 for a sample of customers who bought Legos in the United States.
+
+The dataset is available as part of the dsbox package, and it's called `lego_sales`.
+
+You can take a quick peek at your data frame and view its dimensions with the `glimpse` function.
+You can find out more about the dataset by inspecting its documentation, which you can access by running `?lego_sales` in the Console or using the Help menu in RStudio to search for `lego_sales`.
+You can also find this information [here](https://rstudio-education.github.io/dsbox/reference/lego_sales.html).
+
+For each of the exercises below, first think about which variables you need to consider from the dataset and write down some notes on how you'll go about answering the question, and then start writing the code.
+
+1. Within this sample, which Lego theme has made the most money for Lego?
+
+✏️ *Write your answer in your R Markdown document under the appropriate exercise, knit the document, commit your changes with a meaningful commit message and push. Make sure you commit and push all files so your Git pane is clear after the push.*
+
+2. Within this sample, which area code has spent the most money on Legos? In the US the area code is the first 3 digits of a phone number. **Hint:** The [`str_sub()`](https://stringr.tidyverse.org/reference/str_sub.html) function will be helpful here!
+
+✏️ *Now is a good time to commit and push your changes to GitHub with an appropriate commit message. Commit and push all changed files so that your Git pane is cleared up afterwards. Make sure that your last push to the repo comes before the deadline, **29 October, 16:00 UK time**. You can confirm that what you committed and pushed are indeed in your repo that we will see by visiting your repo on GitHub. Make sure your Rmd and md files are there and that your md file contains all of your plots as well.*
+
+## Getting help
+
+If you have any questions about the assignment, please post them on Piazza and/or stop by student hours!
