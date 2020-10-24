@@ -29,7 +29,7 @@ The assignment assumes that you've worked through materials up to week 5.
 
 - If there is no `hw-02` GitHub repo created for you for this assignment, it means I didn't have your GitHub username as of when I assigned the homework. Please let me know your GitHub username asap and I can create your repo.
 
-- In this assigment you will have two automated checks: One checking whether your Rmd file knits and the other checking the structure of your Rmd file. Passing the first check requires that, well, your Rmd file knits without errors. Passing the second check requires that (1) you haven't changed the structure of the template you're working off of (e.g. haven't removed headings like `Exercise 1`, `Code`, `Narrative` and have not changed the labels of the code chunks) and that you attempted all questions. These checks are meant to guide you along the way, they're not an indicator for your score. You can't get full marks on the assignment if you didn't pass both, but failing one of them doesn't mean you get a 0 either.
+- In this assigment you will have two automated checks: One checking whether your Rmd file knits and the other checking the structure of your Rmd file. Passing the first check requires that, well, your Rmd file knits without errors. Passing the second check requires (1) that you haven't changed the structure of the template you're working off of (e.g. haven't removed headings like `Exercise 1`, `Code`, `Narrative` and have not changed the labels of the code chunks) and (2) that you attempted all questions. These checks are meant to guide you along the way, they're not an indicator for your score. You can't get full marks on the assignment if you didn't pass both, but failing one of them doesn't mean you get a 0 either.
 
 ```{=html}
 <details>
@@ -127,7 +127,7 @@ knitr::include_graphics("plot-to-recreate/plot-to-recreate.png")
 
 3. Recreate the visualisation from the previous exercise, this time using a binwidth of \$1,000.  Which of these (\$1,000 or \$5,000) is a better choice of binwidth? Explain your reasoning in one sentence.
 
-4. Which **non-STEM majors** have median salaries equal to or less than the median for all majors' median earnings? Your output should only show the major name and median, 25th percentile, and 75th percentile earning for that major as and should be sorted such that the major with the highest median earning is on top. Note: STEM majors are `"Biology & Life Science"`, `"Computers & Mathematics"`, `"Engineering"`, and `"Physical Sciences"`. In this question we're inquiring about non-STEM majors.
+4. Which STEM majors have median salaries equal to or less than the median for all majors' median earnings? Your output should only show the major name and median, 25th percentile, and 75th percentile earning for that major as and should be sorted such that the major with the highest median earning is on top. Note: STEM major categories are `"Biology & Life Science"`, `"Computers & Mathematics"`, `"Engineering"`, and `"Physical Sciences"`.
 
 ✏️ *Write your answer in your R Markdown document under the appropriate exercise, knit the document, commit your changes with a meaningful commit message and push. Make sure you commit and push all files so your Git pane is clear after the push.*
 
