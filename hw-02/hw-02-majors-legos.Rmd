@@ -127,7 +127,11 @@ knitr::include_graphics("plot-to-recreate/plot-to-recreate.png")
 
 3. Recreate the visualisation from the previous exercise, this time using a binwidth of \$1,000.  Which of these (\$1,000 or \$5,000) is a better choice of binwidth? Explain your reasoning in one sentence.
 
-4. Which STEM majors have median salaries equal to or less than the median for all majors' median earnings? Your output should only show the major name and median, 25th percentile, and 75th percentile earning for that major as and should be sorted such that the major with the highest median earning is on top. Note: STEM major categories are `"Biology & Life Science"`, `"Computers & Mathematics"`, `"Engineering"`, and `"Physical Sciences"`.
+```{marginfigure}
+**Tip:** If you don't feel line writing out the names of the majors by hand, you can use inline code with the [`glue_collapse()`](https://glue.tidyverse.org/reference/glue_collapse.html) function from the glue package after you `pull()` the names of the majors out and save them as a vector. So, `pull()` the names of the majors, save them as a vector, then use inline code where you `glue_collapse()` the vector, separated by commas. This would be a nice exercise in constructing sentences programmatically!
+```
+
+4. <a style="color:red;background:yellow">**NOTE: This exercise was modified slightly after it was first posted.**</a> Which STEM majors have median salaries equal to or less than the median for all majors' median earnings? Your output should only show the major name and median, 25th percentile, and 75th percentile earning for that major as and should be sorted such that the major with the highest median earning is on top. Note: STEM major categories are `"Biology & Life Science"`, `"Computers & Mathematics"`, `"Engineering"`, and `"Physical Sciences"`.
 
 ✏️ *Write your answer in your R Markdown document under the appropriate exercise, knit the document, commit your changes with a meaningful commit message and push. Make sure you commit and push all files so your Git pane is clear after the push.*
 
@@ -155,7 +159,11 @@ For each of the exercises below, first think about which variables you need to c
 
 ✏️ *Write your answer in your R Markdown document under the appropriate exercise, knit the document, commit your changes with a meaningful commit message and push. Make sure you commit and push all files so your Git pane is clear after the push.*
 
-2. Within this sample, which area code has spent the most money on Legos? In the US the area code is the first 3 digits of a phone number. **Hint:** The [`str_sub()`](https://stringr.tidyverse.org/reference/str_sub.html) function will be helpful here!
+```{marginfigure}
+**Hint:** The [`str_sub()`](https://stringr.tidyverse.org/reference/str_sub.html) function will be helpful here!
+```
+
+2. Within this sample, which area code has spent the most money on Legos? In the US the area code is the first 3 digits of a phone number. 
 
 ✏️ *Now is a good time to commit and push your changes to GitHub with an appropriate commit message. Commit and push all changed files so that your Git pane is cleared up afterwards. Make sure that your last push to the repo comes before the deadline, **29 October, 16:00 UK time**. You can confirm that what you committed and pushed are indeed in your repo that we will see by visiting your repo on GitHub. Make sure your Rmd and md files are there and that your md file contains all of your plots as well.*
 
