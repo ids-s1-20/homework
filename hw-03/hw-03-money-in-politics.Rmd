@@ -137,15 +137,16 @@ The following exercises walk you through how to make these fixes to the data.
 
 ## Data visualization and interpretation
 
-4.  Create a line plot of total contributions from all foreign-connected PACs in the Canada and Mexico over the years. Once you have made the plot, write a brief interpretation of what the graph reveals. Few hints to help you out:
+4.  Create a line plot of total contributions from all foreign-connected PACs in the Canada and Mexico over the years.
+    Once you have made the plot, write a brief interpretation of what the graph reveals.
+    Few hints to help you out:
 
     -   Filter for only `Canada` and `Mexico`.
     -   Calculate sum of total contributions from PACs for each year for each country by using a sequence of `group_by()` then `summarise()`.
     -   Make a plot of total contributions (y-axis) by year (x-axis) where two lines identified by different colours represent each of Canada and Mexico.
 
-```{=html}
 <!-- -->
-```
+
 5.  Recreate the following visualisation. Once you have made the plot, write a brief interpretation of what the graph reveals. Note that these are only UK contributions. You will need to make use of functions from the **scales** package for axis labels as well as from **ggplot2**. Remember, if you can't figure out certain bits, you can always ask on Piazza!
 
 ```{r echo=FALSE, out.width="100%", fig.fullwidth = TRUE}
@@ -155,4 +156,3 @@ knitr::include_graphics("plot-to-recreate/plot-to-recreate.png")
 🧶 ✅ ⬆️ *Knit your document, and commit and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 [^1]: Source: [Open Secrets - About](https://www.opensecrets.org/about/).
-
