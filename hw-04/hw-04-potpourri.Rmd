@@ -41,7 +41,9 @@ In this three part assignment you get to practice what we learned this week, try
   
 </details>
 ```
-# Part 1 - Mirror, mirror on the wall, who's the ugliest of them all?
+# Part 1 - Mirror, mirror on the wall, 
+
+# who's the ugliest of them all?
 
 Here is a simple plot using the `mpg` dataset, which contains information on fuel economy of cars.
 We're plotting highway miles per gallon vs. city miles per gallon, coloured by whether the car is front-wheel drive, rear wheel drive, or four-wheel drive.
