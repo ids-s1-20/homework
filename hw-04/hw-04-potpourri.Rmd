@@ -157,6 +157,8 @@ For example, for the first package listed below, `USERNAME` is `hadley` and `PAC
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | [ggkeyboard](https://github.com/sharlagelfand/ggkeyboard) | Plot a Keyboard Using "ggplot2"                                                                                    |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| [jasmines](https://jasmines.djnavarro.net/)               | Make generative art                                                                                                |
++-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | [kandinsky](https://github.com/gsimchoni/kandinsky)       | Turn any dataset into a Kandinsky painting                                                                         |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | [lego](https://github.com/seankross/lego)                 | This R data package contains information about every Lego set manufactured from 1970 to 2015, a total of 6172 sets |
