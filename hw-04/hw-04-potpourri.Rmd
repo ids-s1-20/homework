@@ -1,5 +1,5 @@
 ---
-title: "HW 03 - Potpourri"
+title: "HW 04 - Potpourri"
 subtitle: "Due: 27 November, 16:00 UK time"
 output: 
   tufte::tufte_html:
