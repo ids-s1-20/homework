@@ -41,7 +41,7 @@ In this three part assignment you get to practice what we learned this week, try
   
 </details>
 ```
-# Part 1 - Mirror, mirror on the wall, 
+# Part 1 - Mirror, mirror on the wall,
 
 # who's the ugliest of them all?
 
@@ -83,10 +83,7 @@ It doesn't have to be complicated.
 In fact, **keep it simple**.
 The goal is for you to read and understand the package documentation to carry out a simple task.
 
-2.  Which package are you using?
-    State the name of the package, whether it was on CRAN or GitHub, and include the code for loading it.
-    Also include a one sentence description of what the package does.Then, do something with the package and provide a brief narrative including code and output.
-    Also comment on difficulties you had, if any, figuring out how to use the package.
+2.  Which package are you using? State the name of the package, whether it was on CRAN or GitHub, and include the code for loading it. Also include a one sentence description of what the package does.Then, do something with the package and provide a brief narrative including code and output. Also comment on difficulties you had, if any, figuring out how to use the package.
 
 ## Packages on CRAN
 
@@ -110,6 +107,8 @@ install.packages("PACKAGENAME")
 | [praise](https://cran.r-project.org/web/packages/praise/praise.pdf)                     | Build friendly R packages that praise their users if they have done something good, or they just need it to feel better                                                                                                                          |
 +-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | [ggimage](https://cran.r-project.org/web/packages/ggimage/vignettes/ggimage.html)       | Supports image files and graphic objects to be visualized in 'ggplot2' graphic system                                                                                                                                                            |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [gganimate](https://github.com/dgrtwo/gganimate)                                        | Create easy animations with ggplot2                                                                                                                                                                                                              |
 +-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | [suncalc](https://cran.r-project.org/web/packages/suncalc/suncalc.pdf)                  | R interface to `suncalc.js` library, part of the [SunCalc.net project](http://suncalc.net), for calculating sun position, sunlight phases (times for sunrise, sunset, dusk, etc.), moon position and lunar phase for the given location and time |
 +-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,8 +151,6 @@ For example, for the first package listed below, `USERNAME` is `hadley` and `PAC
 | [emoGG](https://github.com/dill/emoGG)                    | Use Emoji in ggplot2                                                                                               |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | [emokid](https://github.com/itsrainingdata/emokid)        | For those times when you're having trouble expressing how you feel about your broken code                          |
-+-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| [gganimate](https://github.com/dgrtwo/gganimate)          | Create easy animations with ggplot2                                                                                |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | [ggkeyboard](https://github.com/sharlagelfand/ggkeyboard) | Plot a Keyboard Using "ggplot2"                                                                                    |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
