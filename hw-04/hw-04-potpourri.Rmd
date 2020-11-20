@@ -184,8 +184,8 @@ For example, for the first package listed below, `USERNAME` is `hadley` and `PAC
 
 # Part 3 - Peer review
 
-For the last part of this assignment we're asking you to review three projects.
-You will get access to the three project repos you will review after the workshop on Friday, 20 November.
+For the last part of this assignment we're asking you to review [**two**]{.ul} projects.
+You will get access to the two project repos you will review after the workshop on Friday, 20 November.
 To locate these repos go to the course organisation on GitHub and look for project repos that are not your own, with the name `project-SOME-OTHER-TEAM-NAME`.
 
 You will have limited access to these repos.
@@ -202,4 +202,4 @@ Then, select the issue template titled **Peer review**, and answer the following
 -   Provide constructive feedback on any issues with file and/or code organization.
 -   (Optional) Any further comments or feedback?
 
-4.  Add links to the three issues you opened as part of your peer review. You don't need to copy and paste the contents of the issues, just the links.
+4.  Add links to the two issues you opened as part of your peer review. You don't need to copy and paste the contents of the issues, just the links.
