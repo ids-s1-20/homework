@@ -21,6 +21,9 @@ knitr::include_graphics("img/aroma-21973_640.jpg")
 
 In this three part assignment you get to practice what we learned this week, try something new, and get creative!
 
+**NOTE:** No automated checks for this homework assignment!
+Make sure to knit and commit and push your Rmd, output, and any figures you generate.
+
 ```{=html}
 <details>
   <summary>Need a refresher of the workflow?</summary>
