@@ -171,6 +171,8 @@ For example, for the first package listed below, `USERNAME` is `hadley` and `PAC
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | [emokid](https://github.com/itsrainingdata/emokid)         | For those times when you're having trouble expressing how you feel about your broken code                          |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| [flametree](https://flametree.djnavarro.net/)              | The goal of flametree is to make pretty pictures                                                                   |
++------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | [ggbarf](https://github.com/karawoo/ggbarf)                | Make isotype bars using the vomit emoji                                                                            |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | [ggCyberPunk](https://github.com/delabj/ggCyberPunk)       | Create Cyberpunk area and line plots                                                                               |
@@ -189,7 +191,8 @@ For example, for the first package listed below, `USERNAME` is `hadley` and `PAC
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | [prenoms](https://github.com/ThinkR-open/prenoms)          | First names given to babies in metropolitan France between 1900 and 2015                                           |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-|                                                            |                                                                                                                    |
+| [raybonsai](http://www.raybonsai.com/)                     | Generate 3D procedural trees in R, rendered with rayrender!                                                        |
+|                                                            | Procedural generation code based on the flametree package by Danielle Navarro.                                     |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 |                                                            |                                                                                                                    |
 +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
